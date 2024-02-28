@@ -24,6 +24,7 @@ export class HomeComponent {
   {
     if (!inputValue) {
       this.filteredLocationList = this.housingLocationList;
+      this.notfound = 0; //clearing it if previously set to 1, as it dispays not found message if input cleared and searched again
       return;
     }
   
