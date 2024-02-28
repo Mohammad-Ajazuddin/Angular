@@ -12,6 +12,7 @@ export class HomeComponent {
 
   housingLocationList: HousingLocation[] = [];  
   filteredLocationList: HousingLocation[] = [];
+  notfound:number = 0;
 
   //dependency injection of service
   constructor(private housingService : HousingService){
@@ -29,5 +30,13 @@ export class HomeComponent {
     this.filteredLocationList = this.housingLocationList.filter(
       housingLocation => housingLocation?.city.toLowerCase().includes(inputValue.toLowerCase())
     );
+
+    if(this.filteredLocationList.length==0)
+    {
+      this.notfound = 1;
+    }
+    else{
+      this.notfound = 0;
+    }
   }
 }

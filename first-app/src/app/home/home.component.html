@@ -10,4 +10,6 @@
   <section class="results">
     <!--Property binding. Send data from parent(home component) to child (hosing-location)-->
     <app-housing-location *ngFor = "let housingLocation of filteredLocationList" [housingLocation]="housingLocation"></app-housing-location>
+
+    <h3 *ngIf="notfound" style = "text-align: center; color: red;">Sorry No matches found!</h3>
   </section>
