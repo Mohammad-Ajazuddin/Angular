@@ -4,6 +4,7 @@
   <br>
   <hr>
   <h3>ScreenShots</h3>
+
 ![Homepage](Homepage.png)
 ![IndividualHomeDetails](HomeDetails.png)
 ![SearchResults](SearchResults.png)
