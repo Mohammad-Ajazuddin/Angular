@@ -1,11 +1,13 @@
   <section>
     <form>
-      <input type="text" placeholder="Filter by city">
-      <button class="primary" type="button">Search</button>
+      <!-- template ref var filter -->
+      <input type="text" placeholder="Filter by city" #filter>
+      <!-- passing input value. filter.value -->
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
     </form>
   </section>
 
   <section class="results">
     <!--Property binding. Send data from parent(home component) to child (hosing-location)-->
-    <app-housing-location *ngFor = "let housingLocation of housingLocationList" [housingLocation]="housingLocation"></app-housing-location>
+    <app-housing-location *ngFor = "let housingLocation of filteredLocationList" [housingLocation]="housingLocation"></app-housing-location>
   </section>
