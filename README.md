@@ -3,6 +3,6 @@
   <a href="https://angular.io/tutorial/first-app">https://angular.io/tutorial/first-app</a>
 ![Homepage](Homepage.png)
 ![IndividualHomeDetails](HomeDetails.png)
-![SearchFeature(SearchResults.png)
+![SearchResults](SearchResults.png)
 ![SearchResultNotFound](Notfound.png)
 ![JsonServer](JsonServer.png)
