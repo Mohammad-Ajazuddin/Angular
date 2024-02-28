@@ -15,9 +15,17 @@ export class HomeComponent {
   notfound:number = 0;
 
   //dependency injection of service
-  constructor(private housingService : HousingService){
-    this.housingLocationList = this.housingService.getAllHousingLocations();
-    this.filteredLocationList = this.housingLocationList;
+  // constructor(private housingService : HousingService){
+  //   this.housingLocationList = this.housingService.getAllHousingLocations();
+  //   this.filteredLocationList = this.housingLocationList;
+  // }
+
+  constructor(private housingService:HousingService) {
+    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
+      this.housingLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList;
+    });
+    //promise obj. hence then method.
   }
 
   filterResults(inputValue:string)

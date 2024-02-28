@@ -22,11 +22,18 @@ export class DetailsComponent {
     email: new FormControl('')
   });
 
-  constructor(private currentRoute:ActivatedRoute, private housingService:HousingService)
-  {
-    this.housingLocationId = Number(this.currentRoute.snapshot.params['id']);
+  // constructor(private currentRoute:ActivatedRoute, private housingService:HousingService)
+  // {
+  //   this.housingLocationId = Number(this.currentRoute.snapshot.params['id']);
 
-    this.housingLocation = this.housingService.getHousingLocationById(this.housingLocationId);
+  //   this.housingLocation = this.housingService.getHousingLocationById(this.housingLocationId);
+  // }
+
+  constructor(private currentRoute:ActivatedRoute,private housingService:HousingService) {
+    const housingLocationId = parseInt(this.currentRoute.snapshot.params['id'], 10);
+    this.housingService.getHousingLocationById(housingLocationId).then(housingLocation => {
+      this.housingLocation = housingLocation;
+    });
   }
 
   submitApplication() {
