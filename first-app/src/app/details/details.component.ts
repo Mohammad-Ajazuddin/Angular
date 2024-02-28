@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { HousingService } from '../housing.service';
 import { ActivatedRoute } from '@angular/router';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { HousingLocation } from '../housinglocation';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
-HousingLocationComponent
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
