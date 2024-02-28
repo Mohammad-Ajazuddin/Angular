@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -8,7 +7,7 @@ import { HousingLocationComponent } from './housing-location/housing-location.co
 import { HousingService } from './housing.service';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes : Routes = [
   {
@@ -33,7 +32,8 @@ const routes : Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [HousingService],
   bootstrap: [AppComponent]
